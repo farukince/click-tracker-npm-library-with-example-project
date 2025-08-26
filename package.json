@@ -1,7 +1,7 @@
 {
   "name": "click-tracker-project",
   "version": "1.0.0",
-  "description": "NPM kütüphanesi ve test projesi için ana çalışma alanı",
+  "description": "NPM library for tracking button clicks and sending them to an API",
   "private": true,
   "workspaces": [
     "packages/*",
