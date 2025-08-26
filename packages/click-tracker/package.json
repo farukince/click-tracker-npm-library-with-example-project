@@ -1,6 +1,6 @@
 {
   "name": "@farukiince/click-tracker",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Buton tıklamalarını izleyip bir API'ye gönderen basit bir kütüphane.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
