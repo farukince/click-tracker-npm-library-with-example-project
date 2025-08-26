@@ -1,0 +1,16 @@
+{
+  "name": "click-tracker-project",
+  "version": "1.0.0",
+  "description": "NPM kütüphanesi ve test projesi için ana çalışma alanı",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "example"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=example"
+  },
+  "keywords": [],
+  "author": "Adın Soyadın",
+  "license": "ISC"
+}

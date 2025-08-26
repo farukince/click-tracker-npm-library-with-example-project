@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Modern tarayıcıların anladığı bir JavaScript sürümünü hedefle
+    "module": "ESNext", // Modern modül sistemini kullan (import/export)
+    "declaration": true, // Her .ts dosyası için bir .d.ts dosyası oluşturur (tipleri dışa aktarmak için önemli)
+    "outDir": "./dist", // Derlenmiş JavaScript dosyalarının konulacağı klasör
+    "rootDir": "./src", // TypeScript kaynak kodlarının bulunduğu klasör
+    "strict": true, // Tüm katı tip kontrolü kurallarını etkinleştir
+    "moduleResolution": "node", // Modüllerin nasıl bulunacağını belirtir
+    "types": ["node"]
+  },
+  "include": ["src"], // Derleyiciye hangi klasördeki dosyaları derlemesi gerektiğini söyler
+  "exclude": ["node_modules", "dist"] // Derleme dışı bırakılacak klasörler
+}

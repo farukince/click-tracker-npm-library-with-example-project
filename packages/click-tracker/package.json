@@ -1,0 +1,26 @@
+{
+  "name": "@farukiince/click-tracker",
+  "version": "1.2.1",
+  "description": "Buton tıklamalarını izleyip bir API'ye gönderen basit bir kütüphane.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "click",
+    "tracker",
+    "event",
+    "analytics",
+    "typescript"
+  ],
+  "author": "Adın Soyadın",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.0"
+  }
+}
