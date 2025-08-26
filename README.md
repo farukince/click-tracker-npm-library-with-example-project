@@ -36,8 +36,6 @@ The library within this project is published on NPM. You can install it in your 
 ```bash
 npm install @farukiince/click-tracker
 ```
-*Note: Replace `@your-npm-username` with the actual NPM username.*
-
 ---
 
 ## 🇹🇷 Proje Hakkında (Turkish)
@@ -68,4 +66,3 @@ Bu proje içindeki kütüphane NPM'de yayınlanmıştır. Kendi projelerinize a�
 ```bash
 npm install @farukiince/click-tracker
 ```
-*Not: `@senin-npm-kullanici-adin` kısmını gerçek NPM kullanıcı adınızla değiştirin.*
