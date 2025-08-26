@@ -36,8 +36,6 @@ The library within this project is published on NPM. You can install it in your 
 ```bash
 npm install @farukiince/click-tracker
 ```
-
-
 ---
 
 ## 🇹🇷 Proje Hakkında (Turkish)
