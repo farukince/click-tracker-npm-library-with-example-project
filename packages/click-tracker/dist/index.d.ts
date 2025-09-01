@@ -5,8 +5,8 @@ interface TrackerOptions {
     payload?: Record<string, any>;
 }
 /**
- * Kütüphaneyi başlatan ana fonksiyon.
- * @param options - Kütüphane ayarları (Supabase URL ve Anon Key içermeli).
+ * kütüphanenin ana fonksiyonu
+ * @param options - Kütüphane ayarları
  */
 export declare function init(options: TrackerOptions): void;
 export {};

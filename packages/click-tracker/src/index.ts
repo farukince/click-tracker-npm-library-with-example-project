@@ -1,38 +1,31 @@
-// 1. Supabase istemcisini ve gerekli tipleri import et.
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// 2. Kütüphane ayarları için arayüzü Supabase bilgilerini içerecek şekilde genişlet.
 interface TrackerOptions {
-  supabaseUrl: string;       // Kullanıcının Supabase proje URL'si (ZORUNLU)
-  supabaseAnonKey: string;   // Kullanıcının Supabase anon anahtarı (ZORUNLU)
-  selector?: string;         // İzlenecek butonlar için CSS seçicisi (OPSİYONEL)
-  payload?: Record<string, any>; // YENİ: Her tıklamaya eklenecek özel veri objesi.
+  supabaseUrl: string;       
+  supabaseAnonKey: string;   
+  selector?: string;         // Belirli butonları izlemek için CSS seçici.
+  payload?: Record<string, any>; // Her tıklamaya eklenebilecek özel veri objesi.
 }
 
-// Tıklama verisinin yapısı (DB'deki sütunlarla eşleşmeli)
 interface ButtonClickDetail {
   button_id: string;
   button_classes: string;
   button_text: string;
-  payload?: Record<string, any>; // YENİ: Veritabanına gidecek payload verisi.
+  payload?: Record<string, any>; 
 }
-
-// Global değişkenleri tanımla
-let supabase: SupabaseClient; // Supabase istemcisi bu değişkende tutulacak.
+// global variable 
+let supabase: SupabaseClient; 
 let isTracking = false;
 
 
 /**
- * Yakalanan tıklama verisini Supabase'e gönderir.
  * @param clickData - Veritabanına kaydedilecek tıklama bilgileri.
  */
 async function sendToSupabase(clickData: ButtonClickDetail) {
   try {
-    // 'clicks' tablosuna yeni bir satır ekle.
     const { error } = await supabase.from('clicks').insert([clickData]);
 
     if (error) {
-      // Eğer bir hata olursa, bunu geliştirici konsolunda göster.
       console.error('Error sending data to Supabase:', error.message);
     } else {
       console.log('Click data successfully sent to Supabase.');
@@ -44,11 +37,9 @@ async function sendToSupabase(clickData: ButtonClickDetail) {
 
 
 /**
- * Belirtilen seçiciye sahip tüm butonları bulur ve tıklama izleyicisini ekler.
+
  * @param selector - Tıklamaları izlenecek butonları hedefleyen bir CSS seçicisi.
  */
-// GÜNCELLENDİ: 'payload' parametresi eklendi.
-// Sadece trackClicks fonksiyonunu güncelliyoruz
 
 function trackClicks(selector: string, payload?: Record<string, any>): void {
   const buttons = document.querySelectorAll<HTMLButtonElement>(selector);
@@ -62,7 +53,6 @@ function trackClicks(selector: string, payload?: Record<string, any>): void {
         ...(payload && { payload: payload })
       };
       
-      // YENİDEN EKLENDİ: Arayüzü bilgilendirmek için Event fırlat.
       const event = new CustomEvent('buttonClicked', {
         detail: buttonData
       });
@@ -75,8 +65,8 @@ function trackClicks(selector: string, payload?: Record<string, any>): void {
 }
 
 /**
- * Kütüphaneyi başlatan ana fonksiyon.
- * @param options - Kütüphane ayarları (Supabase URL ve Anon Key içermeli).
+ * kütüphanenin ana fonksiyonu
+ * @param options - Kütüphane ayarları 
  */
 export function init(options: TrackerOptions): void {
   if (isTracking) {
@@ -84,19 +74,17 @@ export function init(options: TrackerOptions): void {
     return;
   }
 
-  // 5. Supabase URL ve Anahtarının sağlanıp sağlanmadığını kontrol et.
   if (!options.supabaseUrl || !options.supabaseAnonKey) {
     console.error('Supabase URL and Anon Key are required in init options.');
     return;
   }
   
-  // 6. Gelen bilgilerle Supabase istemcisini oluştur ve global değişkene ata.
   supabase = createClient(options.supabaseUrl, options.supabaseAnonKey);
 
   const selector = options.selector || 'button';
 
   console.log(`Click Tracker started. Tracking clicks on: ${selector}`);
   isTracking = true;
-  // GÜNCELLENDİ: payload'ı trackClicks fonksiyonuna iletiyoruz.
+  
   trackClicks(selector, options.payload);
 }

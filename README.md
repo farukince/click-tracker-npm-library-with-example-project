@@ -33,10 +33,7 @@ This is a "monorepo" structure managed with NPM Workspaces:
 
 The library within this project is published on NPM. You can install it in your own projects using the following command:
 
-```bash
 npm install @farukiince/click-tracker
-```
----
 
 ## 🇹🇷 Proje Hakkında (Turkish)
 
@@ -63,6 +60,6 @@ Bu bir "monorepo" yapısıdır ve NPM Workspaces kullanılarak yönetilir:
 
 Bu proje içindeki kütüphane NPM'de yayınlanmıştır. Kendi projelerinize aşağıdaki komutu kullanarak kurabilirsiniz:
 
-```bash
+
 npm install @farukiince/click-tracker
-```
+

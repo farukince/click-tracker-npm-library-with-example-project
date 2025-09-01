@@ -1,7 +1,7 @@
 {
   "name": "click-tracker-project",
   "version": "1.0.0",
-  "description": "NPM library for tracking button clicks and sending them to an API",
+  "description": "Example Project for Click Tracker NPM Library",
   "private": true,
   "workspaces": [
     "packages/*",
@@ -11,6 +11,9 @@
     "dev": "npm run dev --workspace=example"
   },
   "keywords": [],
-  "author": "Adın Soyadın",
-  "license": "ISC"
+  "author": "Faruk İnce",
+  "license": "ISC",
+  "dependencies": {
+    "@farukiince/click-tracker": "^1.2.3"
+  }
 }

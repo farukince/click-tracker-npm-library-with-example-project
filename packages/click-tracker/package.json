@@ -1,7 +1,7 @@
 {
   "name": "@farukiince/click-tracker",
-  "version": "1.2.3",
-  "description": "Buton tıklamalarını izleyip bir API'ye gönderen basit bir kütüphane.",
+  "version": "1.3.0",
+  "description": "NPM library for tracking button clicks and sending them to an API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,13 +9,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "userEvent",
     "click",
     "tracker",
     "event",
     "analytics",
     "typescript"
   ],
-  "author": "Adın Soyadın",
+  "author": "Faruk İnce",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.0.0"
